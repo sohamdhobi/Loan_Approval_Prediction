@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/styles/style.css" type="text/css" />
+</head>
+<body>
+    <form action="/preprocessing" method="post">
+        <h1>First Five Row of dataset</h1><br>
+        <img class="head" src="{{ head1 }}" /><br>{{'shape'}}<br>
+        <h1>Describing the numerical features</h1>
+        <img src="{{ desc }}" />
+        <h1>Value counts</h1><br>
+        <img src="{{ null_value }}" />                   
+        <button onclick="remove_null()">Remove Null Values</button>
+        <input type="submit" value="submit">
+    </form>
+   
+    
+</body>
+</html>

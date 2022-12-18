@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+
+    <link rel="stylesheet" href="../static/styles/style.css" type="text/css" />
+</head>
+<body>
+    <div class="p1" style="width:100vw;height:100vh">
+        
+        <form action="/result" method="post">
+            <h1 class="heading">Loan Approval Prediction</h1>
+            <div style="float:left; width:50vw; height: 80vh; align-content: center;">
+                <label>Gender</label><br>
+                <input type="radio" name="gender" value="1"> Male    <input type="radio" name="gender" value="0">Female<br><br>
+                <label>Married</label><br>
+                <input type="radio" name="married" value="1"> Yes    <input type="radio" name="married" value="0">No<br><br>
+                <label>Dependents</label><br>
+                <select name="dependents">
+                    <option value="0">No Dependents</option>
+                    <option value="1">One Dependent</option>
+                    <option value="2">Two Dependent</option>
+                    <option value="3">Three Dependent</option>
+                    <option value="4">Four Dependent</option>
+                </select><br><br>
+                <label>Education</label><br>
+                <input type="radio" name="education" value="1">Graduate  <input type="radio" name="education" value="0">NotGraduate<br><br>
+                <label>Self Employed</label><br>
+                <input type="radio" name="self_empolyed" value="1">Yes  <input type="radio" name="self_empolyed" value="0">No<br><br>
+                <label>Applicant income</label><br>
+                <input type="number" name="a_income"><br><br>
+                
+            </div>
+            <div style="float: right;width:50vw">
+                <label>CoApplicant income</label><br>
+                <input type="number" name="c_income"><br><br>
+                <label>Credit History</label><br>
+                <input type="radio" name="history" value="1">Yes  <input type="radio" name="history" value="0">No<br><br>
+                <label>Resident Of Applicant</label><br>
+                <select name="area">
+                    <option value="0">Rural</option>
+                    <option value="1">Semiurban</option>
+                    <option value="2">Urban</option>
+                </select><br><br>
+                <label>Loan Amount</label><br>
+                <input type="number" name="loan_amount"><br><br>
+                <label>Loan Term In Months</label><br>
+                <input type="number" name="loan_term"><br><br>
+                <button onclick="predict()">predict</button>
+            </div>
+            <br><br>
+            <h1 class="status">LoanApproval Status:{{result}}</h1>
+        </form>
+    </div>
+
+</body>
+</html>
